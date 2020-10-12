@@ -3,14 +3,16 @@
   color: #02077d ;
   font-family: monospace;
   font-size: 1.8em;
-  width: 54vw;
+  width: 49vw;
   top: 16%;
   left: 23%;
   line-height: 1.7em;
   border: 3px solid #404040 ;
-  padding: 30px;
+  padding: 30px 45px;
   margin-bottom: 40px;
-  border-radius: 15px;
+  border-radius: 20px;
+  text-align: justify;
+
 
 }
 
