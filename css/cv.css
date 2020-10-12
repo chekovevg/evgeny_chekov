@@ -1,0 +1,60 @@
+.container {
+  position:absolute;
+  color: #02077d ;
+  font-family: monospace;
+  font-size: 1.8em;
+  width: 54vw;
+  top: 16%;
+  left: 23%;
+  line-height: 1.7em;
+  border: 3px solid #404040 ;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+
+}
+
+body {
+  background-color:
+}
+
+.h1 {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  height: auto;
+  max-width: 482px;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-family: sans-serif;
+  color: #000;
+  /*color:  #707070;*/
+  font-size: 1.8em;
+  line-height: 1.15em;
+  font-weight: 400;
+}
+
+.heading {
+  position: fixed;
+  left: 10px;
+  top: auto;
+  right: auto;
+  bottom: 10px;
+  height: auto;
+  max-width: 470px;
+  min-width: 470px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-family: SS, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.15em;
+  font-weight: 400;
+}
+
+.links {
+  color:  #626262;
+  text-decoration: none;
+}

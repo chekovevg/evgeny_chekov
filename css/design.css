@@ -1,0 +1,72 @@
+.story {
+  position: fixed;
+  color: #050505;
+  font-family: monospace;
+  font-size: 1.8em;
+  width: 30vw;
+  top: 20%;
+  left: 5%;
+}
+
+h2 a {
+  color: #050505;
+  text-decoration: none;
+}
+div img {
+position: relative;
+width: 49vw;
+height: auto;
+left:540px;
+top: 60px;
+margin-bottom: 54px;
+}
+
+.lead-bw {
+width:37vw;
+left:730px;
+}
+
+.lead-clr {
+  position: fixed;
+  width:22vw;
+  height: auto;
+  left:490px;
+  top: 140px;
+  margin-bottom: 84px;
+}
+.h1 {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  height: auto;
+  max-width: 482px;
+  min-width: 400px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-family: sans-serif;
+  color: #000;
+  font-size: 1.8em;
+  line-height: 1.15em;
+  font-weight: 400;
+}
+
+h2 {
+  color: #050505;
+  position: fixed;
+  left: 10px;
+  top: 60px;
+  right: auto;
+  bottom: 10px;
+  height: auto;
+  max-width: 470px;
+  min-width: 470px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-family: SS, sans-serif;
+  color: #000;
+  font-size: 1.5em;
+  line-height: 1.15em;
+  font-weight: 400;
+}
