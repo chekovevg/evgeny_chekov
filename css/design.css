@@ -7,6 +7,12 @@
   top: 20%;
   left: 5%;
 }
+
+h2::selection {background: #ffb7b7;}
+
+br::selection {background: #fff2a8;}
+.story::selection {background: #fff2a8;}
+
 .links {
   color: #202020;
   text-decoration: none;

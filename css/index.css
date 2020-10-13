@@ -1,19 +1,39 @@
 
-/*
-body {
-  border: 2px solid #1b1b1b;*/
- .main {
-   top: auto;
-   right: auto;
-   height: auto;
-   font-family: SS, sans-serif;
-   color: #000;
-   font-size: 1.3em;
-   line-height: 1.22em;
-   font-weight: 400;
-
- }
+@keyframes gradient-animation
+{from {background-position: 100% 0%;}
+to {background-position: 0% 0%;}
 }
+
+.animation{
+ background: repeating-linear-gradient(90deg,
+ #111111  0%, #6f6f6f 12.5%, #e8e8e8 25%,  #111111 50%);
+ background-size: 200%;
+ background-position: 100% 0%;
+ animation-name: gradient-animation;
+ animation-duration: 33s;
+ animation-iteration-count: infinite;
+ animation-fill-mode: forwards;
+ animation-timing-function: linear;
+ margin-left: 360px;
+ margin-right: px;
+ height: 607px;
+ }
+
+  /*
+  body {
+    border: 2px solid #1b1b1b;*/
+h1::selection {background: #ffb7b7;}
+
+.main,::selection {background: #e8e8e8;}
+
+.main:hover {background: #fff2a8;}
+
+br::selection {background: #fff2a8;}
+
+.links::selection {background: #fff2a8;}
+
+
+
 .lang {
   position: fixed;
   display: inline;
@@ -74,4 +94,18 @@ body {
 .links {
   color: #050505;
   text-decoration: none;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+}
+
+.main {
+  top: auto;
+  right: auto;
+  height: auto;
+  font-family: SS, sans-serif;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-weight: 400;
+  letter-spacing: normal;
 }
