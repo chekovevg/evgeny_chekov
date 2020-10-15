@@ -38,6 +38,21 @@ O% {background-position: 0 50%;}
 100% {background-position: 0 50%;}
 } */
 
+.container {
+  max-width: 1200px;
+    }
+
+@media (max-width:1200px) {
+  .container {max-width: 970px;}
+}
+@media (max-width:992px) {
+  .container {max-width: 750px;}
+  .story { font-size: 2.8em;}
+}
+@media (max-width:767px) {
+  .container {max-width: none;}
+}
+
 * a {
   color: #050505;
   text-decoration: none;
@@ -84,6 +99,7 @@ br::selection {background: #fff2a8;}
   font-weight: 400;
 }
 
+
 /*общий стиль ссылок с желтым выделением*/
 .links {
   color: #050505;
@@ -113,11 +129,9 @@ br::selection {background: #fff2a8;}
 
 /*CV*/
 
-/**/
-
 /*текст cv*/
-.container {
-  position:absolute;
+.text {
+  position: absolute;
   color: #02077d ;
   font-family: monospace;
   font-size: 1.8em;
@@ -161,7 +175,7 @@ p::selection {background: #fff2a8;}
   font-family: monospace;
   font-size: 1.8em;
   width: 28vw;
-  top: 20%;
+  top: 130px;
   left: 5%;
 }
 .story::selection {background: #fff2a8;}
@@ -176,18 +190,45 @@ top: 60px;
 margin-bottom: 54px;
 }
 
+.lead-bw, .lead-clr, .lead-bw-photo, .lead-clr-photo {
+position: relative;
+width: 49vw;
+height: auto;
+margin-left:4%;
+margin-top: 4%;
+transition: all 0.5s ease;
+}
+
+.lead-bw:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: scale(1.1);
+}
+.lead-clr:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: scale(1.1);
+}
+
+.lead-bw-photo:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: scale(1.1);
+}
+.lead-clr-photo:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: scale(1.1);
+}
+
+
 .lead-bw {
+top: 50px;
 width:37vw;
-left:730px;
+left:60%;
 }
 
 .lead-clr {
   position: fixed;
   width:22vw;
-  height: auto;
-  left:490px;
-  top: 140px;
-  margin-bottom: 84px;
+  left:35%;
+  top: 100px;
 }
 
 /*второй заголовок с выделением*/
@@ -239,7 +280,7 @@ left:690px;
   width:25vw;
   height: auto;
   left:490px;
-  top: 340px;
+  top: 240px;
   margin-bottom: 54px;
 }
 
