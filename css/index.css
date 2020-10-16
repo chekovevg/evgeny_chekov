@@ -58,6 +58,24 @@ O% {background-position: 0 50%;}
   text-decoration: none;
 }
 
+/*текст cv*/
+.text {
+  position: absolute;
+  color: #02077d ;
+  font-family: monospace;
+  font-size: 1.8em;
+  width: 49vw;
+  top: 16%;
+  left: 23%;
+  line-height: 1.7em;
+  border: 3px solid #404040 ;
+  padding: 30px 45px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  text-align: justify;
+}
+p::selection {background: #fff2a8;}
+
 /*заголовок*/
 h1 {
   position: fixed;
@@ -129,23 +147,8 @@ br::selection {background: #fff2a8;}
 
 /*CV*/
 
-/*текст cv*/
-.text {
-  position: absolute;
-  color: #02077d ;
-  font-family: monospace;
-  font-size: 1.8em;
-  width: 49vw;
-  top: 16%;
-  left: 23%;
-  line-height: 1.7em;
-  border: 3px solid #404040 ;
-  padding: 30px 45px;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  text-align: justify;
-}
-p::selection {background: #fff2a8;}
+
+
 
 /*заголовок-ссылка на главную*/
 .h1-second {
