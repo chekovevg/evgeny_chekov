@@ -221,7 +221,7 @@ transition: all 0.5s ease;
 .lead-bw {
 top: 50px;
 width:37vw;
-left:53%;
+left:60%;
 }
 
 .lead-clr {
@@ -268,21 +268,19 @@ margin-bottom: 54px;
   width: 27vw;
 }
 
-/*photo-gallery*/
+/*стиль фото-ссылок в разделе фото*/
 
 .lead-bw-photo {
 width:40vw;
-left:690px;
+left:48%;
 }
 
 .lead-clr-photo {
   position: fixed;
-  width:25vw;
-  height: auto;
-  left:490px;
-  top: 240px;
-  margin-bottom: 54px;
-}
+  width:27vw;
+  left:38%;
+  top: 250px;
+  }
 
 /*текст-описание*/
 .story-photo {
