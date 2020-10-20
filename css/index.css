@@ -48,16 +48,34 @@ O% {background-position: 0 50%;}
 @media (max-width:992px) {
   .container {max-width: 750px;}
   .story { font-size: 2.8em;}
+
 }
 @media (max-width:767px) {
   .container {max-width: none;}
+  .text {
+
+    color: #3c7d02;
+    /*#02077d
+    position: absolute;
+    font-family: monospace;
+    font-size: 1.8em;
+    width: 49vw;
+    top: 100px;
+    left: 23%;
+    line-height: 1.7em;
+    border: 3px solid #404040 ;
+    padding: 30px 45px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    text-align: justify;*/
+  }
+  p::selection {background: #fff2a8;}
 }
 
 * a {
   color: #050505;
   text-decoration: none;
 }
-
 
 /*заголовок*/
 h1 {
@@ -109,7 +127,9 @@ br::selection {background: #fff2a8;}
   letter-spacing: 0.3px;
 }
 
-.links::selection {background: #fff2a8;}
+.links::selection {
+  background: #fff2a8;
+}
 
 /*три пункта с подсветкой серым*/
 .main {
@@ -124,9 +144,13 @@ br::selection {background: #fff2a8;}
   letter-spacing: normal;
 }
 
-.main,::selection {background: #e8e8e8;}
+.main,::selection {
+  background: #e8e8e8;
+}
 
-.main:hover {background: #ffffff;}
+.main:hover {
+  background: #ffffff;
+}
 
 /*CV*/
 
@@ -146,9 +170,9 @@ br::selection {background: #fff2a8;}
   border-radius: 20px;
   text-align: justify;
 }
-p::selection {background: #fff2a8;}
-
-
+p::selection {
+  background: #fff2a8;
+}
 
 /*заголовок-ссылка на главную*/
 .h1-second {
@@ -169,70 +193,99 @@ p::selection {background: #fff2a8;}
   font-weight: 400;
 }
 
-/*Design*/
 
-/*текст-описание с выделением*/
-.story {
-  position: fixed;
-  color: #050505;
-  font-family: monospace;
-  font-size: 1.8em;
-  width: 28vw;
-  top: 130px;
-  left: 5%;
+
+  /*фото дизайна обложки (не нужен пока)
+  .magazine1{
+  position: relative;
+  width: 35vw;
+  height: auto;
+  left:55%;
+  top: 60px;
+  margin-bottom: 54px;
+  }*/
+
+/*стиль контейнера фотогалереи*/
+.photos {
+display: flex;
+flex-direction: column;
 }
-.story::selection {background: #fff2a8;}
 
-/*стиль фото-ссылок*/
-div img {
+/*стиль фотогалереи*/
+.photos img {
 position: relative;
 width: 49vw;
-height: auto;
 left:540px;
-top: 60px;
+top: 90px;
 margin-bottom: 54px;
+padding-right: 60px;
 }
 
-.lead-bw, .lead-clr, .lead-bw-photo, .lead-clr-photo {
-position: relative;
-width: 49vw;
-height: auto;
-margin-left:4%;
-margin-top: 4%;
+.lead-bw,
+.lead-clr,
+.lead-bw-photo,
+.lead-clr-photo {
+position: absolute;
 transition: all 0.5s ease;
+top: 60px;
 }
 
-.lead-bw:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+/*настройки анимации*/
+.lead-bw:hover,
+.lead-bw-photo:hover,
+.lead-clr-photo:hover,
+.lead-clr:hover{
   transform: scale(1.1);
-}
-.lead-clr:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transform: scale(1.1);
-}
-
-.lead-bw-photo:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transform: scale(1.1);
-}
-.lead-clr-photo:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transform: scale(1.1);
+    /*box-shadow: 0 20px 40px rgba(0,0,0,0.3);*/
 }
 
-
+/*стиль фото-ссылок в "дизайн"*/
 .lead-bw {
-top: 50px;
-width:37vw;
-left:60%;
+  width: 40vw;
+  left: 48%;
+  top: 80px;
 }
 
 .lead-clr {
-  position: fixed;
-  width:22vw;
-  left:35%;
-  top: 100px;
+  width: 22vw;
+  left: 38%;
+  top: 150px;
 }
+
+/*текст-описание с выделением*/
+.story {
+  position: absolute;
+  color: #050505;
+  font-family: monospace;
+  font-size: 1.8em;
+  width: 340px;
+  top: 130px;
+  left: 5%;
+  }
+.story::selection {background: #fff2a8;}
+
+/*стиль фото-ссылок в "фото"*/
+.lead-bw-photo {
+width:40vw;
+left:48%;
+}
+
+.lead-clr-photo {
+width:27vw;
+left:38%;
+top: 250px;
+}
+
+/*текст-описание*/
+.story-photo {
+  position: absolute;
+  color: #050505;
+  font-family: monospace;
+  font-size: 1.8em;
+  width: 30vw;
+  top: 130px;
+  left: 5%;
+  }
 
 /*второй заголовок с выделением*/
 h2 {
@@ -256,42 +309,8 @@ h2 {
 
 h2::selection {background: #ffb7b7;}
 
-/*фото дизайна обложки*/
-.magazine1{
-position: relative;
-width: 35vw;
-height: auto;
-left:55%;
-top: 60px;
-margin-bottom: 54px;
-}
 
 /*убирает предлог "с" на новую строку в описании "Встречи"*/
 .mag {
-  width: 27vw;
+  width: 300px;
 }
-
-/*стиль фото-ссылок в разделе фото*/
-
-.lead-bw-photo {
-width:40vw;
-left:48%;
-}
-
-.lead-clr-photo {
-  position: fixed;
-  width:27vw;
-  left:38%;
-  top: 250px;
-  }
-
-/*текст-описание*/
-.story-photo {
-  position: fixed;
-  color: #050505;
-  font-family: monospace;
-  font-size: 1.8em;
-  width: 30vw;
-  top: 130px;
-  left: 5%;
-  }
