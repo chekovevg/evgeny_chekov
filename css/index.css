@@ -330,9 +330,9 @@ h2::selection {background: #ffb7b7;}
     top: 0px;
     color: #02077d;
     font-size: 1.4em;
-    text-align: justify;
-    left: 15%;
-    min-width: 56vw;
+    text-align: left;
+    left: 7%;
+    min-width: 65vw;
   }
 
   .h1-second {
