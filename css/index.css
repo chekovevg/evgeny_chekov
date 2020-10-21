@@ -40,41 +40,16 @@ O% {background-position: 0 50%;}
 
 .container {
   max-width: 1200px;
-    }
-
-@media (max-width:1200px) {
-  .container {max-width: 970px;}
 }
-@media (max-width:992px) {
-  .container {max-width: 750px;}
-  .story { font-size: 2.8em;}
 
-}
-@media (max-width:767px) {
-  .container {max-width: none;}
-  .text {
-
-    color: #3c7d02;
-    /*#02077d
-    position: absolute;
-    font-family: monospace;
-    font-size: 1.8em;
-    width: 49vw;
-    top: 100px;
-    left: 23%;
-    line-height: 1.7em;
-    border: 3px solid #404040 ;
-    padding: 30px 45px;
-    margin-bottom: 40px;
-    border-radius: 20px;
-    text-align: justify;*/
-  }
-  p::selection {background: #fff2a8;}
-}
 
 * a {
   color: #050505;
   text-decoration: none;
+}
+
+.back-nav{
+  display:none;
 }
 
 /*заголовок*/
@@ -157,18 +132,20 @@ br::selection {background: #fff2a8;}
 /*текст cv*/
 .text {
   position: absolute;
-  color: #02077d ;
-  font-family: monospace;
-  font-size: 1.8em;
-  width: 49vw;
-  top: 100px;
+  width: 670px;
+  top: 77px;
   left: 23%;
+
+  color: #02077d;
+  font-family:Roboto-Mono, monospace;
+  font-size: 1.46em;
   line-height: 1.7em;
-  border: 3px solid #404040 ;
-  padding: 30px 45px;
   margin-bottom: 40px;
   border-radius: 20px;
   text-align: justify;
+  padding: 55px 45px;
+  border: 3px solid #404040 ;
+  
 }
 p::selection {
   background: #fff2a8;
@@ -313,4 +290,66 @@ h2::selection {background: #ffb7b7;}
 /*убирает предлог "с" на новую строку в описании "Встречи"*/
 .mag {
   width: 300px;
+}
+
+
+@media (max-width:1200px) {
+  .container {max-width: 970px;}
+  .text {
+    color: #02077d;
+    font-size: 1.46em;
+  }
+}
+
+
+@media (max-width:1050px) {
+  .container {max-width: 750px;}
+  .story {font-size: 2.8em;}
+  .text {
+  border: none;
+  width: 56vw;
+  color: #02077d;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+}
+
+@media (max-width:950px) {
+  .container {max-width: none;}
+  .text {
+    
+    color: #02077d;
+    font-size: 1.5em;
+    text-align: left;
+  }
+}
+@media (max-width:800px) {
+  .container {max-width: none;}
+  .text {
+    color: #02077d;
+    font-size: 1.4em;
+    text-align: justify;
+    left: 15%;
+    min-width: 56vw;
+  }
+
+  .h1-second {
+    display: none;
+  }
+  .back-nav{
+    display:inline-block;
+    position: fixed;
+    width: 20px;
+    top: 20px;
+    left: 20px;
+    }
+}
+
+@media (max-width:610px) {
+    .text {    
+    color: #02077d;
+    font-size: 1.3em;
+    text-align: justify;
+  }
 }
