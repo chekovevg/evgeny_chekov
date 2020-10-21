@@ -360,7 +360,7 @@ h2::selection {background: #ffb7b7;}
     padding: 45px 40px;
   }
   
-  a {
+  .back-nav{
     display:block;
     position: fixed;
     width: 20px;
