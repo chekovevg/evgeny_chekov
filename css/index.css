@@ -361,7 +361,7 @@ h2::selection {background: #ffb7b7;}
   }
   
   .back-nav{
-    display:inline-block;
+    display:block;
     position: fixed;
     width: 20px;
     top: 20px;
