@@ -360,7 +360,6 @@ h2::selection {background: #ffb7b7;}
     padding: 45px 40px;
   }
   .back-nav{
-    background-image: url(img/icon2.jpg);
     display:inline-block;
     position: fixed;
     width: 20px;
