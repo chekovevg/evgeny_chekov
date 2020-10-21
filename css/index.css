@@ -145,7 +145,7 @@ br::selection {background: #fff2a8;}
   text-align: justify;
   padding: 55px 45px;
   border: 3px solid #404040 ;
-  
+
 }
 p::selection {
   background: #fff2a8;
@@ -348,8 +348,9 @@ h2::selection {background: #ffb7b7;}
 }
 
 @media (max-width:610px) {
-    .text { 
-    top: 0;   
+    .text {
+    width: 76vw;
+    top: 0;
     color: #02077d;
     font-size: 1.3em;
     text-align: left;
