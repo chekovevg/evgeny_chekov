@@ -318,7 +318,7 @@ h2::selection {background: #ffb7b7;}
 @media (max-width:950px) {
   .container {max-width: none;}
   .text {
-    
+    top: 47px;
     color: #02077d;
     font-size: 1.5em;
     text-align: left;
@@ -327,6 +327,7 @@ h2::selection {background: #ffb7b7;}
 @media (max-width:800px) {
   .container {max-width: none;}
   .text {
+    top: 0px;
     color: #02077d;
     font-size: 1.4em;
     text-align: justify;
@@ -347,7 +348,8 @@ h2::selection {background: #ffb7b7;}
 }
 
 @media (max-width:610px) {
-    .text {    
+    .text { 
+    top: 0;   
     color: #02077d;
     font-size: 1.3em;
     text-align: left;
