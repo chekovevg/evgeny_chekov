@@ -360,11 +360,7 @@ h2::selection {background: #ffb7b7;}
     padding: 45px 40px;
   }
   .fuck-you {
-    padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
+   
   }
   .back-nav{
     display:inline-block;
