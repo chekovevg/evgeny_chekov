@@ -355,5 +355,6 @@ h2::selection {background: #ffb7b7;}
     font-size: 1.1em;
     text-align: left;
     left: 5%;
+    padding: 45px 40px;
   }
 }
