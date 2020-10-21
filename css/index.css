@@ -333,8 +333,6 @@ h2::selection {background: #ffb7b7;}
     text-align: left;
     left: 7%;
     min-width: 65vw;
-    padding: 36px 40px;
-}
   }
 
   .h1-second {
@@ -343,7 +341,7 @@ h2::selection {background: #ffb7b7;}
   .back-nav{
     display:inline-block;
     position: fixed;
-    width: 26px;
+    width: 20px;
     top: 20px;
     left: 20px;
     }
@@ -359,11 +357,4 @@ h2::selection {background: #ffb7b7;}
     left: 5%;
     padding: 45px 40px;
   }
-  .back-nav{
-    display:inline-block;
-    position: fixed;
-    width: 20px;
-    top: 20px;
-    left: 20px;
-    }
 }
