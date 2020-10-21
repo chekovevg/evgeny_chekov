@@ -350,6 +350,7 @@ h2::selection {background: #ffb7b7;}
     .text {    
     color: #02077d;
     font-size: 1.3em;
-    text-align: justify;
+    text-align: left;
+    left: 8%;
   }
 }
