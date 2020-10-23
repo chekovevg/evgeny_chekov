@@ -198,6 +198,15 @@ margin-bottom: 54px;
 padding-right: 60px;
 }
 
+.photo-cover {
+  position: relative;
+  width: 40vw;
+  left: 600px;
+  top: 90px;
+  margin-bottom: 54px;
+  padding-right: 60px;
+}
+
 .lead-bw,
 .lead-clr,
 .lead-bw-photo,
