@@ -172,7 +172,7 @@ p::selection {
 
 
 
-  /*фото дизайна обложки (не нужен пока)
+/* фото дизайна обложки */
   .magazine1{
   position: relative;
   width: 35vw;
@@ -180,7 +180,7 @@ p::selection {
   left:55%;
   top: 60px;
   margin-bottom: 54px;
-  }*/
+  }
 
 /*стиль контейнера фотогалереи*/
 .photos {
