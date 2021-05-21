@@ -149,7 +149,7 @@ br::selection {background: #fff2a8;}
 }
 
 /*текст ссылок в cv*/
-a.text {color: #02077d;
+.text::a {color: #02077d;
 }
 
 p::selection {
