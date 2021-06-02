@@ -256,6 +256,11 @@ top: 60px;
   }
 .story::selection {background: #fff2a8;}
 
+/*цвет ссылки в текст-описание дизайн*/
+.story a {
+  color: #02077d;
+}
+
 /*стиль фото-ссылок в "фото"*/
 .lead-bw-photo {
 width:40vw;
