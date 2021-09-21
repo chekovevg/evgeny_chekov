@@ -138,7 +138,7 @@ br::selection {background: #fff2a8;}
 
   color: #02077d;
   font-family:Roboto-Mono, monospace;
-  font-size: 1.46em;
+  font-size: 1.2em;
   line-height: 1.7em;
   margin-bottom: 40px;
   border-radius: 20px;
@@ -324,7 +324,7 @@ h2::selection {background: #ffb7b7;}
   .container {max-width: 970px;}
   .text {
     color: #02077d;
-    font-size: 1.46em;
+    font-size: 1.2em;
   }
 }
 
@@ -336,7 +336,7 @@ h2::selection {background: #ffb7b7;}
   border: none;
   width: 56vw;
   color: #02077d;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: left;
 }
 
@@ -347,7 +347,7 @@ h2::selection {background: #ffb7b7;}
   .text {
     top: 47px;
     color: #02077d;
-    font-size: 1.5em;
+    font-size: 1.1em;
     text-align: left;
   }
 }
@@ -356,7 +356,7 @@ h2::selection {background: #ffb7b7;}
   .text {
     top: 0px;
     color: #02077d;
-    font-size: 1.4em;
+    font-size: 1em;
     text-align: left;
     left: 7%;
     min-width: 65vw;
