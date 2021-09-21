@@ -337,7 +337,7 @@ h2::selection {background: #ffb7b7;}
   width: 56vw;
   color: #02077d;
   font-size: 1.2em;
-  text-align: left;
+  text-align: justify;
 }
 
 }
@@ -348,7 +348,7 @@ h2::selection {background: #ffb7b7;}
     top: 47px;
     color: #02077d;
     font-size: 1.1em;
-    text-align: left;
+    text-align: justify;
   }
 }
 @media (max-width:800px) {
