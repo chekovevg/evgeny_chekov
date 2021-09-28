@@ -246,7 +246,7 @@ top: 60px;
 
 /*текст-описание с выделением*/
 .story {
-  position: fixed;
+  position: absolute;
   color: #050505;
   font-family: monospace;
   font-size: 1.4em;
