@@ -331,7 +331,7 @@ h2::selection {background: #ffb7b7;}
 
 @media (max-width:1050px) {
   .container {max-width: 750px;}
-  .story {font-size: 2.8em;}
+  /*.story {font-size: 2.8em;} */
   .text {
   border: none;
   width: 56vw;
