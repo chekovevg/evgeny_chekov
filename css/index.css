@@ -261,6 +261,11 @@ top: 60px;
   color: #e9c834;
 }
 
+/*закрепляет текст-описание "встречи"*/
+.story .mag {
+  position: fixed;
+}
+
 /*стиль фото-ссылок в "фото"*/
 .lead-bw-photo {
 width:40vw;
