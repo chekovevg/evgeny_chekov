@@ -262,9 +262,14 @@ top: 60px;
 }
 
 /*закрепляет текст-описание "встречи"*/
-.story .mag {
+.story-mag {
   position: fixed;
 }
+
+.story-cover {
+  position: fixed;
+}
+
 
 /*стиль фото-ссылок в "фото"*/
 .lead-bw-photo {
