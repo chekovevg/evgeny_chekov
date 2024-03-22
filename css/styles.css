@@ -8,7 +8,13 @@
 }
 
 /* General Styles */
-* a {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
   color: var(--primary-color);
   text-decoration: none;
 }
@@ -21,6 +27,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Typography */
@@ -61,6 +68,7 @@ h2::selection {
   padding: 55px 45px;
   border: 1.4px solid #404040;
   border-radius: 20px;
+  margin-bottom: 40px;
 }
 
 .text a {
