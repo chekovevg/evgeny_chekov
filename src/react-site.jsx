@@ -33,7 +33,13 @@ import {
 } from "@/react-site-data";
 
 const pageMeta = {
-  index: { title: "Home", eyebrow: "Entry point", backHref: null, backLabel: null },
+  index: {
+    title: "evgeny chekov",
+    eyebrow: "React + shadcn version",
+    backHref: null,
+    backLabel: null,
+    showLargeTitle: false
+  },
   cv: { title: "About", eyebrow: "Profile", backHref: reactPageMap.index, backLabel: "Back home" },
   design: { title: "Design", eyebrow: "Selected work", backHref: reactPageMap.index, backLabel: "Back home" },
   magazine: { title: "Magazine", eyebrow: "Editorial", backHref: reactPageMap.design, backLabel: "Back to design" },
@@ -65,18 +71,24 @@ const pageMeta = {
     title: "Color",
     eyebrow: "Photography",
     backHref: reactPageMap["photo-gallery"],
-    backLabel: "Back to archive"
+    backLabel: "Back to archive",
+    showLargeTitle: true
   }
 };
 
 function ArchitectureSwitch({ page }) {
   return (
-    <div className="sticky top-4 z-40 mb-8 flex justify-end">
-      <div className="inline-flex gap-2 rounded-full border border-border/80 bg-background/88 p-2 shadow-[0_18px_48px_-28px_rgba(0,0,0,0.45)] backdrop-blur">
-        <Button variant="ghost" size="sm" asChild>
-          <a href={staticPageMap[page]}>HTML/CSS</a>
-        </Button>
-        <Button size="sm">React + shadcn</Button>
+    <div className="mb-8 flex justify-end">
+      <div className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-1.5 py-1 shadow-sm">
+        <a
+          href={staticPageMap[page]}
+          className="rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          HTML/CSS
+        </a>
+        <span className="rounded-full bg-foreground px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-background">
+          React + shadcn
+        </span>
       </div>
     </div>
   );
@@ -84,28 +96,29 @@ function ArchitectureSwitch({ page }) {
 
 function Shell({ page, children }) {
   const meta = pageMeta[page];
+  const showLargeTitle = meta.showLargeTitle ?? true;
 
   return (
-    <main className="ui-kit-page min-h-screen px-5 py-6 sm:px-8">
-      <div className="mx-auto max-w-6xl">
+    <main className="ui-kit-page min-h-screen px-6 py-6 sm:px-8">
+      <div className="mx-auto max-w-[960px]">
         <ArchitectureSwitch page={page} />
 
-        <header className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <div className="space-y-2">
+        <header className="mb-8 flex flex-wrap items-start justify-between gap-4">
+          <div className="space-y-1">
             <a
               href={reactPageMap.index}
-              className="text-xs uppercase tracking-[0.32em] text-muted-foreground transition-colors hover:text-foreground"
+              className="text-2xl font-normal tracking-[-0.03em] text-foreground transition-colors hover:text-foreground/70"
             >
               evgeny chekov
             </a>
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                {meta.eyebrow}
-              </p>
-              <h1 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
+            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+              {meta.eyebrow}
+            </p>
+            {showLargeTitle ? (
+              <h1 className="pt-2 text-2xl font-medium tracking-[-0.03em] text-foreground sm:text-4xl">
                 {meta.title}
               </h1>
-            </div>
+            ) : null}
           </div>
 
           {meta.backHref ? (
@@ -126,106 +139,92 @@ function Shell({ page, children }) {
 
 function HomePage() {
   return (
-    <div className="space-y-8">
-      <section className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.9fr)]">
-        <Card className="rounded-[2rem] border-border/70 bg-background/94 shadow-[0_40px_120px_-48px_rgba(0,0,0,0.45)]">
-          <CardHeader className="space-y-5 p-8 sm:p-10">
-            <Badge variant="secondary" className="w-fit rounded-full px-4 py-1">
-              Learning mode
-            </Badge>
-            <CardTitle className="max-w-3xl text-4xl leading-none tracking-[-0.06em] sm:text-6xl">
-              One portfolio, two architectures.
-            </CardTitle>
-            <CardDescription className="max-w-2xl text-base leading-7">
-              This React version mirrors the static site, but its screens are
-              assembled from reusable components with shadcn/ui.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="p-8 pt-0 sm:p-10 sm:pt-0">
-            <div className="flex flex-wrap gap-3">
-              <Button asChild>
-                <a href={reactPageMap.design}>
-                  Open React version
-                  <ArrowRight className="size-4" />
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href={staticPageMap.index}>Compare with static HTML</a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-black text-white">
-          <CardHeader>
-            <CardDescription className="text-white/60">
-              Why this matters
-            </CardDescription>
-            <CardTitle className="text-white">What changes in React</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm leading-6 text-white/72">
-            <p>Pages become components and data instead of duplicated HTML fragments.</p>
-            <p>Navigation, cards, dialogs, and controls can be reused across multiple screens.</p>
-            <p>shadcn/ui gives you styled building blocks while you keep full control of the code.</p>
-          </CardContent>
-        </Card>
+    <div className="space-y-10">
+      <section className="space-y-6">
+        <Badge variant="secondary" className="rounded-full px-3 py-1 font-medium">
+          Learning mode
+        </Badge>
+        <div className="max-w-3xl space-y-4">
+          <h1 className="text-4xl font-normal tracking-[-0.05em] text-foreground sm:text-6xl">
+            One site, two ways to build it.
+          </h1>
+          <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+            This version keeps the same portfolio structure, but the pages are
+            assembled from React components and shadcn/ui primitives instead of
+            hand-written HTML blocks.
+          </p>
+        </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="space-y-3">
         {homeLinks.map((link) => (
-          <Card key={link.title} className="border-border/70 bg-background/88">
-            <CardHeader>
-              <CardTitle className="text-xl tracking-[-0.03em]">{link.title}</CardTitle>
-              <CardDescription>{link.description}</CardDescription>
-            </CardHeader>
-            <CardFooter>
-              <Button variant="outline" className="w-full justify-between" asChild>
-                <a href={link.href}>
-                  Open page
-                  <ArrowRight className="size-4" />
-                </a>
-              </Button>
-            </CardFooter>
+          <Card
+            key={link.title}
+            className="border-border/70 bg-background/92 shadow-none transition-colors hover:bg-secondary/40"
+          >
+            <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <CardTitle className="text-xl font-medium tracking-[-0.03em]">
+                  {link.title}
+                </CardTitle>
+                <CardDescription className="mt-2 max-w-xl text-sm leading-6">
+                  {link.description}
+                </CardDescription>
+              </div>
+              <div className="sm:shrink-0">
+                <Button variant="ghost" className="justify-between px-0 sm:px-3" asChild>
+                  <a href={link.href}>
+                    Open page
+                    <ArrowRight className="size-4" />
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
           </Card>
         ))}
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)]">
-        <Card className="border-border/70 bg-background/90">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <Layers3 className="size-5" />
-              Same destination, different construction
+      <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <Card className="border-border/70 bg-background/92 shadow-none">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-xl font-medium tracking-[-0.03em]">
+              <Layers3 className="size-4" />
+              Same pages, different assembly
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="static" className="gap-5">
-              <TabsList>
+            <Tabs defaultValue="static" className="gap-4">
+              <TabsList className="w-full justify-start">
                 <TabsTrigger value="static">Static</TabsTrigger>
                 <TabsTrigger value="react">React</TabsTrigger>
-                <TabsTrigger value="shadcn">shadcn/ui</TabsTrigger>
+                <TabsTrigger value="shadcn">shadcn</TabsTrigger>
               </TabsList>
               <TabsContent value="static" className="text-sm leading-7 text-muted-foreground">
-                In the HTML/CSS version, each page is written directly as markup and styled with CSS classes.
+                In the HTML/CSS version, each page is written directly in a
+                file like `design.html` and styled with global classes.
               </TabsContent>
               <TabsContent value="react" className="text-sm leading-7 text-muted-foreground">
-                In the React version, the page is generated from components and data arrays instead of repeated blocks.
+                In the React version, the page is composed from reusable blocks
+                and fed by shared data instead of duplicated markup.
               </TabsContent>
               <TabsContent value="shadcn" className="text-sm leading-7 text-muted-foreground">
-                shadcn/ui sits on the React side and gives you reusable controls like buttons, cards, tabs, sheets, and forms.
+                shadcn/ui gives the React side reusable interface pieces:
+                cards, buttons, tabs, dialogs, forms, and more.
               </TabsContent>
             </Tabs>
           </CardContent>
         </Card>
 
-        <Card className="border-border/70 bg-background/90">
-          <CardHeader>
-            <CardTitle className="text-2xl">Contacts</CardTitle>
+        <Card className="border-border/70 bg-background/92 shadow-none">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-xl font-medium tracking-[-0.03em]">
+              Contacts
+            </CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-3">
+          <CardContent className="grid gap-1">
             {socialLinks.map((link) => (
               <Button key={link.title} variant="ghost" className="justify-between" asChild>
-                <a href={link.href} target="_blank" rel="noreferrer">
+                <a href={link.href}>
                   {link.title}
                   <ArrowRight className="size-4" />
                 </a>
@@ -249,7 +248,7 @@ function RichCopy({ html, className = "" }) {
 
 function AboutPage() {
   return (
-    <Card className="border-border/70 bg-background/92">
+    <Card className="border-border/70 bg-background/92 shadow-none">
       <CardHeader>
         <CardDescription>This page keeps the long-form article, but inside a React shell.</CardDescription>
         <CardTitle className="flex items-center gap-2 text-2xl">
@@ -268,7 +267,7 @@ function DesignPage() {
   return (
     <section className="grid gap-5 md:grid-cols-2">
       {designProjects.map((project) => (
-        <Card key={project.title} className="overflow-hidden border-border/70 bg-background/92">
+        <Card key={project.title} className="overflow-hidden border-border/70 bg-background/92 shadow-none">
           <a href={project.href}>
             <img src={project.image} alt={project.alt} className="react-gallery-image" />
           </a>
@@ -295,7 +294,7 @@ function DesignPage() {
 function MagazinePage() {
   return (
     <div className="space-y-6">
-      <Card className="border-border/70 bg-background/92">
+      <Card className="border-border/70 bg-background/92 shadow-none">
         <CardHeader>
           <CardDescription>Imported copy from the static editorial page.</CardDescription>
         </CardHeader>
@@ -305,7 +304,7 @@ function MagazinePage() {
       </Card>
       <section className="react-gallery-grid">
         {magazinePhotos.map((src, index) => (
-          <Card key={src} className="overflow-hidden border-border/70 bg-background/92 p-0">
+          <Card key={src} className="overflow-hidden border-border/70 bg-background/92 p-0 shadow-none">
             <img
               src={src}
               alt={`Magazine spread ${index + 1}`}
@@ -321,12 +320,12 @@ function MagazinePage() {
 function MagazineCoverPage() {
   return (
     <div className="space-y-6">
-      <Card className="border-border/70 bg-background/92">
+      <Card className="border-border/70 bg-background/92 shadow-none">
         <CardContent className="pt-6">
           <RichCopy html={copyBlocks["magazine-cover"]} />
         </CardContent>
       </Card>
-      <Card className="overflow-hidden border-border/70 bg-background/92 p-0">
+      <Card className="overflow-hidden border-border/70 bg-background/92 p-0 shadow-none">
         <img
           src="img/magazine/2-10.jpg"
           alt="Magazine cover"
@@ -340,7 +339,7 @@ function MagazineCoverPage() {
 function ExperimentsPage() {
   return (
     <section className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)]">
-      <Card className="overflow-hidden border-border/70 bg-background/92">
+      <Card className="overflow-hidden border-border/70 bg-background/92 shadow-none">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Code2 className="size-5" />
@@ -351,7 +350,7 @@ function ExperimentsPage() {
           <pre className="react-ascii" dangerouslySetInnerHTML={{ __html: copyBlocks.experiments }} />
         </CardContent>
       </Card>
-      <Card className="border-border/70 bg-black text-white">
+      <Card className="border-border/70 bg-black text-white shadow-none">
         <CardHeader>
           <CardDescription className="text-white/60">Why keep this page</CardDescription>
           <CardTitle className="text-white">A nice demo of parity</CardTitle>
@@ -369,14 +368,14 @@ function ExperimentsPage() {
 function PhotoHubPage() {
   return (
     <div className="space-y-6">
-      <Card className="border-border/70 bg-background/92">
+      <Card className="border-border/70 bg-background/92 shadow-none">
         <CardContent className="pt-6">
           <RichCopy html={copyBlocks["photo-gallery"]} />
         </CardContent>
       </Card>
       <section className="grid gap-5 md:grid-cols-2">
         {photoBranches.map((branch) => (
-          <Card key={branch.title} className="overflow-hidden border-border/70 bg-background/92">
+          <Card key={branch.title} className="overflow-hidden border-border/70 bg-background/92 shadow-none">
             <a href={branch.href}>
               <img src={branch.image} alt={branch.alt} className="react-gallery-image" />
             </a>
@@ -405,7 +404,7 @@ function PhotoGridPage({ photos, prefix }) {
   return (
     <section className="react-gallery-grid">
       {photos.map((src, index) => (
-        <Card key={src} className="overflow-hidden border-border/70 bg-background/92 p-0">
+        <Card key={src} className="overflow-hidden border-border/70 bg-background/92 p-0 shadow-none">
           <img
             src={src}
             alt={`${prefix} ${index + 1}`}
