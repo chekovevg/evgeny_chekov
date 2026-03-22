@@ -24,6 +24,10 @@ body {
   line-height: 1.6;
 }
 
+body[data-page] {
+  padding-top: calc(var(--spacing) * 3.75);
+}
+
 a {
   color: var(--color-link);
   text-decoration: none;
@@ -91,4 +95,59 @@ h2 {
 .back-nav {
   width: 24px;
   height: auto;
+}
+
+.architecture-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 40;
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.35);
+}
+
+.architecture-switch__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #505050;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.architecture-switch__button:hover {
+  transform: translateY(-1px);
+}
+
+.architecture-switch__button--active {
+  background: #111;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  body[data-page] {
+    padding-top: 5.75rem;
+  }
+
+  .architecture-switch {
+    left: 1rem;
+    right: 1rem;
+    justify-content: stretch;
+  }
+
+  .architecture-switch__button {
+    flex: 1;
+    min-width: 0;
+  }
 }
