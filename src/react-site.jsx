@@ -29,6 +29,7 @@ import {
   reactPageMap,
   socialLinks,
   staticPageMap,
+  magazineCoverImage,
   magazinePhotos
 } from "@/react-site-data";
 
@@ -173,7 +174,7 @@ function HomePage() {
               </div>
               <div className="sm:shrink-0">
                 <Button variant="ghost" className="justify-between px-0 sm:px-3" asChild>
-                  <a href={link.href}>
+                  <a href={link.href} aria-label={`Open ${link.title}`}>
                     Open page
                     <ArrowRight className="size-4" />
                   </a>
@@ -279,7 +280,7 @@ function DesignPage() {
           </CardHeader>
           <CardFooter>
             <Button variant="outline" className="w-full justify-between" asChild>
-              <a href={project.href}>
+              <a href={project.href} aria-label={`Open ${project.title}`}>
                 Open project
                 <ArrowRight className="size-4" />
               </a>
@@ -327,7 +328,7 @@ function MagazineCoverPage() {
       </Card>
       <Card className="overflow-hidden border-border/70 bg-background/92 p-0 shadow-none">
         <img
-          src="img/magazine/2-10.jpg"
+          src={magazineCoverImage}
           alt="Magazine cover"
           className="react-gallery-image"
         />
@@ -387,7 +388,7 @@ function PhotoHubPage() {
             </CardHeader>
             <CardFooter>
               <Button variant="outline" className="w-full justify-between" asChild>
-                <a href={branch.href}>
+                <a href={branch.href} aria-label={`Open ${branch.title} gallery`}>
                   Open gallery
                   <ArrowRight className="size-4" />
                 </a>

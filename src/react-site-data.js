@@ -4,6 +4,36 @@ import magazineHtml from "../magazine.html?raw";
 import magazineCoverHtml from "../magazine-cover.html?raw";
 import photoGalleryHtml from "../photo-gallery.html?raw";
 
+import magazineSpread1 from "../img/magazine/2-1.jpg";
+import magazineSpread2 from "../img/magazine/2-2.jpg";
+import magazineSpread3 from "../img/magazine/2-3.jpg";
+import magazineSpread4 from "../img/magazine/2-4.jpg";
+import magazineSpread5 from "../img/magazine/2-5.jpg";
+import magazineSpread6 from "../img/magazine/2-6.jpg";
+import magazineSpread7 from "../img/magazine/2-7.jpg";
+import magazineSpread8 from "../img/magazine/2-8.jpg";
+import magazineSpread9 from "../img/magazine/2-9.jpg";
+import magazineCover from "../img/magazine/2-10.jpg";
+import bwPhoto1 from "../img/photo-gallery/1-5.jpg";
+import bwPhoto2 from "../img/photo-gallery/1-1.jpg";
+import bwPhoto3 from "../img/photo-gallery/1-3.jpg";
+import bwPhoto4 from "../img/photo-gallery/1-4.jpg";
+import bwPhoto5 from "../img/photo-gallery/1-6.jpg";
+import bwPhoto6 from "../img/photo-gallery/1-8.jpg";
+import bwPhoto7 from "../img/photo-gallery/1-7.jpg";
+import bwPhoto8 from "../img/photo-gallery/1-10.jpg";
+import bwPhoto9 from "../img/photo-gallery/1-11.jpg";
+import bwPhoto10 from "../img/photo-gallery/1-12.jpg";
+import colorPhoto1 from "../img/photo-gallery/2-5.jpg";
+import colorPhoto2 from "../img/photo-gallery/2-2.jpg";
+import colorPhoto3 from "../img/photo-gallery/2-1.jpg";
+import colorPhoto4 from "../img/photo-gallery/2-4.jpg";
+import colorPhoto5 from "../img/photo-gallery/2-6.jpg";
+import colorPhoto6 from "../img/photo-gallery/2-8.jpg";
+import colorPhoto7 from "../img/photo-gallery/2-7.jpg";
+import colorPhoto8 from "../img/photo-gallery/2-3.jpg";
+import colorPhoto9 from "../img/photo-gallery/2-10.jpg";
+
 function extractInnerHtml(html, pattern, fallback = "") {
   const match = html.match(pattern);
   return match ? match[1].trim() : fallback;
@@ -50,13 +80,13 @@ export const designProjects = [
   {
     title: "Student magazine",
     href: reactPageMap.magazine,
-    image: "img/magazine/2-2.jpg",
+    image: magazineSpread2,
     alt: "Magazine spread preview"
   },
   {
     title: "Magazine cover",
     href: reactPageMap["magazine-cover"],
-    image: "img/magazine/2-10.jpg",
+    image: magazineCover,
     alt: "Magazine cover preview"
   }
 ];
@@ -65,53 +95,55 @@ export const photoBranches = [
   {
     title: "Black and white",
     href: reactPageMap["photo-gallery-bw"],
-    image: "img/photo-gallery/1-5.jpg",
+    image: bwPhoto1,
     alt: "Black and white gallery preview"
   },
   {
     title: "Color",
     href: reactPageMap["photo-gallery-clr"],
-    image: "img/photo-gallery/2-5.jpg",
+    image: colorPhoto1,
     alt: "Color gallery preview"
   }
 ];
 
 export const bwPhotos = [
-  "img/photo-gallery/1-5.jpg",
-  "img/photo-gallery/1-1.jpg",
-  "img/photo-gallery/1-3.jpg",
-  "img/photo-gallery/1-4.jpg",
-  "img/photo-gallery/1-6.jpg",
-  "img/photo-gallery/1-8.jpg",
-  "img/photo-gallery/1-7.jpg",
-  "img/photo-gallery/1-10.jpg",
-  "img/photo-gallery/1-11.jpg",
-  "img/photo-gallery/1-12.jpg"
+  bwPhoto1,
+  bwPhoto2,
+  bwPhoto3,
+  bwPhoto4,
+  bwPhoto5,
+  bwPhoto6,
+  bwPhoto7,
+  bwPhoto8,
+  bwPhoto9,
+  bwPhoto10
 ];
 
 export const colorPhotos = [
-  "img/photo-gallery/2-5.jpg",
-  "img/photo-gallery/2-2.jpg",
-  "img/photo-gallery/2-1.jpg",
-  "img/photo-gallery/2-4.jpg",
-  "img/photo-gallery/2-6.jpg",
-  "img/photo-gallery/2-8.jpg",
-  "img/photo-gallery/2-7.jpg",
-  "img/photo-gallery/2-3.jpg",
-  "img/photo-gallery/2-10.jpg"
+  colorPhoto1,
+  colorPhoto2,
+  colorPhoto3,
+  colorPhoto4,
+  colorPhoto5,
+  colorPhoto6,
+  colorPhoto7,
+  colorPhoto8,
+  colorPhoto9
 ];
 
 export const magazinePhotos = [
-  "img/magazine/2-1.jpg",
-  "img/magazine/2-2.jpg",
-  "img/magazine/2-3.jpg",
-  "img/magazine/2-4.jpg",
-  "img/magazine/2-5.jpg",
-  "img/magazine/2-6.jpg",
-  "img/magazine/2-7.jpg",
-  "img/magazine/2-8.jpg",
-  "img/magazine/2-9.jpg"
+  magazineSpread1,
+  magazineSpread2,
+  magazineSpread3,
+  magazineSpread4,
+  magazineSpread5,
+  magazineSpread6,
+  magazineSpread7,
+  magazineSpread8,
+  magazineSpread9
 ];
+
+export const magazineCoverImage = magazineCover;
 
 export const copyBlocks = {
   cv: extractInnerHtml(cvHtml, /<article>([\s\S]*?)<\/article>/i),

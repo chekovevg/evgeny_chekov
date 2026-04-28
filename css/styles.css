@@ -6,7 +6,7 @@
   --color-bg: #fff;
   --color-link: #007aff;
   --max-width: 960px;
-  --spacing: 1.5rem;
+  --site-spacing: 1.5rem;
 }
 
 *,
@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  padding: var(--spacing);
+  padding: var(--site-spacing);
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-text);
@@ -25,7 +25,7 @@ body {
 }
 
 body[data-page] {
-  padding-top: calc(var(--spacing) * 3.75);
+  padding-top: calc(var(--site-spacing) * 3.75);
 }
 
 a {
@@ -42,7 +42,7 @@ h1,
 .h1-second {
   font-size: 2rem;
   font-weight: 400;
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--site-spacing);
 }
 
 .h1-second {
@@ -52,7 +52,7 @@ h1,
 h2 {
   font-size: 1.25rem;
   font-weight: 400;
-  margin: var(--spacing) 0;
+  margin: var(--site-spacing) 0;
 }
 
 .heading .links {
@@ -66,13 +66,13 @@ h2 {
 .story-cover,
 .story-mag {
   font-family: var(--font-mono);
-  margin-bottom: var(--spacing);
+  margin-bottom: var(--site-spacing);
 }
 
 .photos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing);
+  gap: var(--site-spacing);
 }
 
 .photos img,
@@ -88,8 +88,8 @@ h2 {
 
 .back-nav-link {
   position: fixed;
-  top: var(--spacing);
-  left: var(--spacing);
+  top: var(--site-spacing);
+  left: var(--site-spacing);
 }
 
 .back-nav {
