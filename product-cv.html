@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Evgenii Chekov, Product Designer in Tbilisi, GE.">
+    <title>Evgenii Chekov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Figtree:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon2.jpg">
+    <style>
+      :root {
+        --site-color-primary: #0f63fa;
+        --site-color-secondary: #ebebeb;
+        --site-color-neutral: #171717;
+        --site-text-on-primary: #ffffff;
+        --site-font-heading: Figtree, ui-sans-serif, system-ui, sans-serif;
+        --site-font-body: Figtree, ui-sans-serif, system-ui, sans-serif;
+        --site-button-radius: 8px;
+        --site-card-radius: 8px;
+        --site-card-inner-radius: 4px;
+        --site-card-inner-bg-color: color-mix(in srgb, var(--site-color-secondary) 40%, transparent);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--site-color-neutral);
+        font-family: var(--site-font-body);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .cv-profile {
+        min-height: 100dvh;
+        padding: 4rem 0 14rem;
+      }
+
+      .cv-section {
+        width: 100%;
+        max-width: 36rem;
+        margin: 2.5rem auto 0;
+        padding: 0 0.75rem;
+      }
+
+      .cv-section:first-child {
+        margin-top: 0;
+      }
+
+      .cv-section--work,
+      .cv-section--skills {
+        max-width: 35.625rem;
+      }
+
+      .cv-title {
+        color: inherit;
+        font-family: var(--site-font-heading);
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+      }
+
+      .cv-subtitle,
+      .cv-location {
+        margin-top: 0.5rem;
+        color: inherit;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+        opacity: 0.8;
+      }
+
+      .cv-location {
+        font-size: 0.9375rem;
+        font-style: normal;
+      }
+
+      .cv-section-heading {
+        color: inherit;
+        font-family: var(--site-font-heading);
+        font-size: 1.0625rem;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .cv-copy {
+        margin-top: 0.25rem;
+        color: inherit;
+        font-size: 1rem;
+        line-height: 1.5;
+        opacity: 0.8;
+        overflow-wrap: anywhere;
+      }
+
+      .cv-stack {
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+      }
+
+      .cv-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+      }
+
+      .cv-card {
+        min-width: 0;
+        height: 100%;
+        padding: 0.875rem;
+        border: 1px solid var(--site-color-secondary);
+        border-radius: var(--site-card-radius);
+        background: var(--site-card-inner-bg-color);
+        transition: all 0.2s;
+      }
+
+      .cv-card-header,
+      .cv-row {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .cv-card-header {
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .cv-title-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0 0.375rem;
+        min-width: 0;
+      }
+
+      .cv-card-title {
+        color: inherit;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.375;
+      }
+
+      .cv-meta {
+        color: inherit;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        opacity: 0.9;
+      }
+
+      .cv-meta--base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      .cv-date-row {
+        display: flex;
+        gap: 0.375rem;
+        margin-top: 0.5rem;
+      }
+
+      .cv-block {
+        margin-top: 0.75rem;
+      }
+
+      .cv-block-label {
+        color: inherit;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+        opacity: 0.8;
+      }
+
+      .cv-block-text {
+        margin-top: 0.125rem;
+        color: inherit;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        opacity: 0.9;
+        overflow-wrap: anywhere;
+      }
+
+      .cv-highlights {
+        margin-top: 0.5rem;
+        padding: 0 0.75rem;
+        border: 1px solid var(--site-color-secondary);
+        border-radius: var(--site-card-inner-radius);
+      }
+
+      .cv-highlight {
+        padding: 0.5rem 0;
+        color: inherit;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        opacity: 0.9;
+        border-bottom: 1px solid var(--site-color-secondary);
+        overflow-wrap: anywhere;
+      }
+
+      .cv-highlight:last-child {
+        border-bottom: 0;
+      }
+
+      .cv-inline-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.125rem 0.375rem;
+        margin-top: 0.25rem;
+      }
+
+      .cv-dot {
+        display: inline-block;
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 9999px;
+        background: #525866;
+      }
+
+      .cv-icon-link {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.625rem;
+        min-height: 1.75rem;
+        padding: 0.25rem;
+        color: var(--site-color-neutral);
+        text-decoration: none;
+        border: 1px solid var(--site-color-secondary);
+        border-bottom-width: 4px;
+        border-radius: var(--site-button-radius);
+        background: transparent;
+        transition: opacity 0.2s, border-bottom-width 0.2s;
+      }
+
+      .cv-icon-link:hover {
+        opacity: 0.9;
+        border-bottom-width: 1px;
+      }
+
+      .cv-nav {
+        position: fixed;
+        right: 0;
+        bottom: 5.75rem;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 0 0.75rem;
+        pointer-events: none;
+        transition: bottom 0.2s ease;
+      }
+
+      .cv-nav.cv-nav--raised {
+        bottom: 9rem;
+      }
+
+      .cv-nav-inner {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        max-width: 100%;
+        padding: 0.25rem;
+        overflow-x: auto;
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--site-color-secondary);
+        border-radius: 9999px;
+        backdrop-filter: blur(12px);
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .cv-nav-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+      .cv-nav-button {
+        flex-shrink: 0;
+        padding: 0.375rem 0.75rem;
+        color: inherit;
+        font: inherit;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+        text-transform: capitalize;
+        white-space: nowrap;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        border-radius: 9999px;
+        opacity: 0.8;
+      }
+
+      .cv-nav-button:hover,
+      .cv-nav-button.is-active {
+        opacity: 1;
+      }
+
+      .cv-nav-button.is-active {
+        background: color-mix(in srgb, var(--site-color-neutral) 5%, transparent);
+      }
+
+      @media (min-width: 640px) {
+        .cv-section,
+        .cv-nav {
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+
+        .cv-card {
+          padding: 1.25rem;
+        }
+
+        .cv-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Evgenii Chekov - Product Designer",
+        "alternateName": "Evgenii Chekov",
+        "description": "Highly accomplished Product Designer with over 6 years of experience in B2C and B2B technology environments, specializing in creating scalable design systems, high-converting digital products, and impactful visual communications. Proven ability to drive measurable business growth through end-to-end project ownership, cross-functional collaboration with product, marketing, and engineering teams, and dedicated mentorship of junior designers. Adept at leveraging design to achieve significant business outcomes and enhance user experience across diverse markets, including Germany and Georgia.",
+        "jobTitle": "Product Designer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tbilisi",
+          "addressCountry": "GE"
+        },
+        "url": "https://evgeniichekov.cv",
+        "worksFor": [
+          { "@type": "Organization", "name": "Devexperts", "description": "Product Designer" },
+          { "@type": "Organization", "name": "Raw Ventures", "description": "Visual Designer (Part-time)" },
+          { "@type": "Organization", "name": "OLX Group (Avito)", "description": "Communication Designer" },
+          { "@type": "Organization", "name": "SETTERS Education", "description": "Graphic Design Teacher (Part-time)" },
+          { "@type": "Organization", "name": "MADS", "description": "Communication Designer" }
+        ],
+        "alumniOf": [
+          { "@type": "EducationalOrganization", "name": "British Higher School of Art & Design", "skills": "Communication Design" }
+        ],
+        "skills": [
+          "Design Systems & Strategy",
+          "Cross-Functional Collaboration",
+          "Digital Product Design",
+          "Visual & Motion Design",
+          "Technical & Analytical Skills",
+          "Project Management Methodologies",
+          "Communication & Presentation"
+        ],
+        "knowsLanguage": ["English", "Russian"],
+        "hasCertification": [
+          { "@type": "Certification", "about": "Google UX Design Specialization", "issuedBy": "Coursera", "datePublished": "2018-12-31" }
+        ]
+      }
+    </script>
+
+    <main class="cv-profile" id="home">
+      <section id="basics" class="cv-section">
+        <h1 class="cv-title">Evgenii Chekov</h1>
+        <p class="cv-subtitle">Product Designer</p>
+        <address class="cv-location">Tbilisi, GE.</address>
+      </section>
+
+      <section id="about" class="cv-section">
+        <h2 class="cv-section-heading">About</h2>
+        <p class="cv-copy">Highly accomplished Product Designer with over 6 years of experience in B2C and B2B technology environments, specializing in creating scalable design systems, high-converting digital products, and impactful visual communications. Proven ability to drive measurable business growth through end-to-end project ownership, cross-functional collaboration with product, marketing, and engineering teams, and dedicated mentorship of junior designers. Adept at leveraging design to achieve significant business outcomes and enhance user experience across diverse markets, including Germany and Georgia.</p>
+      </section>
+
+      <section id="work" class="cv-section cv-section--work">
+        <h2 class="cv-section-heading">Work</h2>
+        <div class="cv-stack">
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-title-row">
+                <h3 class="cv-card-title">Devexperts</h3>
+                <span class="cv-meta cv-meta--base">|</span>
+                <p class="cv-meta">Product Designer</p>
+              </div>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-date-row">
+              <time class="cv-meta">Nov 2024</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">May 2025</time>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Summary</p>
+              <p class="cv-block-text">Global SaaS provider for capital markets trading platforms.</p>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Highlights</p>
+              <div class="cv-highlights">
+                <p class="cv-highlight">Led the comprehensive redesign of the corporate website and key product pages, significantly increasing visitor-to-lead conversion by 47% (from 1.9% to 2.8%) and reducing bounce rate by 23%.</p>
+                <p class="cv-highlight">Launched 12 high-impact promotional landing pages, generating over 300 qualified leads and contributing to a pipeline exceeding $1.2 million; one page alone secured 3 opportunities valued at $340K within 6 weeks.</p>
+                <p class="cv-highlight">Streamlined design-to-development workflows by expanding and optimizing the UI-kit, enhancing efficiency and collaboration.</p>
+                <p class="cv-highlight">Collaborated closely with engineering teams to ensure pixel-perfect implementation, and effectively communicated design solutions and strategies to executive stakeholders.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-title-row">
+                <h3 class="cv-card-title">Raw Ventures</h3>
+                <span class="cv-meta cv-meta--base">|</span>
+                <p class="cv-meta">Visual Designer (Part-time)</p>
+              </div>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-date-row">
+              <time class="cv-meta">Feb 2023</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">Nov 2024</time>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Summary</p>
+              <p class="cv-block-text">VC fund supporting 20+ portfolio companies and tech-startups.</p>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Highlights</p>
+              <div class="cv-highlights">
+                <p class="cv-highlight">Directed visual identity and branding for over 15 pitching events, significantly reducing concepting time by 60% (approximately 30 hours per project).</p>
+                <p class="cv-highlight">Revitalized visual assets, leading to an an average engagement rate (ER) increase of 18% across social media platforms.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-title-row">
+                <h3 class="cv-card-title">OLX Group (Avito)</h3>
+                <span class="cv-meta cv-meta--base">|</span>
+                <p class="cv-meta">Communication Designer</p>
+              </div>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-date-row">
+              <time class="cv-meta">Feb 2022</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">Jan 2024</time>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Summary</p>
+              <p class="cv-block-text">Largest classifieds platform with 50M+ Monthly Active Users (MAU).</p>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Highlights</p>
+              <div class="cv-highlights">
+                <p class="cv-highlight">Spearheaded the brand rollout across 12 distinct channels, establishing and codifying new comprehensive brand guidelines to ensure consistency.</p>
+                <p class="cv-highlight">Created compelling cross-channel visual assets that boosted promo-page Click-Through Rate (CTR) by 38% and elevated the brand consistency index from 74 to 92.</p>
+                <p class="cv-highlight">Developed and implemented a scalable template system, empowering 6 marketing managers to produce over 150 creatives per quarter and reducing content creation cycles by 15%.</p>
+                <p class="cv-highlight">Collaborated strategically with product teams, providing high-level art direction for successful in-app promotions and new feature launches.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-title-row">
+                <h3 class="cv-card-title">SETTERS Education</h3>
+                <span class="cv-meta cv-meta--base">|</span>
+                <p class="cv-meta">Graphic Design Teacher (Part-time)</p>
+              </div>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-date-row">
+              <time class="cv-meta">Feb 2021</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">Jan 2023</time>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Summary</p>
+              <p class="cv-block-text"></p>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Highlights</p>
+              <div class="cv-highlights">
+                <p class="cv-highlight">Mentored over 40 graphic design students, with 90% successfully securing design roles within 6 months of program completion.</p>
+                <p class="cv-highlight">Developed and implemented a comprehensive Graphic Design curriculum, including leading intensive portfolio-review sprints to prepare students for industry roles.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-title-row">
+                <h3 class="cv-card-title">MADS</h3>
+                <span class="cv-meta cv-meta--base">|</span>
+                <p class="cv-meta">Communication Designer</p>
+              </div>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-date-row">
+              <time class="cv-meta">Oct 2020</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">Apr 2022</time>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Summary</p>
+              <p class="cv-block-text"></p>
+            </div>
+            <div class="cv-block">
+              <p class="cv-block-label">Highlights</p>
+              <div class="cv-highlights">
+                <p class="cv-highlight">Designed engaging motion graphics, web layouts, and email campaigns that contributed to a 28% year-over-year increase in course enrollments.</p>
+                <p class="cv-highlight">Standardized visual guidelines across multiple product teams, streamlining design processes and reducing creative turnaround time.</p>
+                <p class="cv-highlight">Optimized email templates, resulting in a substantial increase in open rates from 18% to 24% and a 6% boost in Click-Through Rate (CTR).</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="cv-section">
+        <h2 class="cv-section-heading">Education</h2>
+        <div class="cv-stack">
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <h3 class="cv-card-title">British Higher School of Art & Design</h3>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cv-row">
+              <time class="cv-meta">Sep 2015</time>
+              <span class="cv-meta">→</span>
+              <time class="cv-meta">Jun 2018</time>
+            </div>
+            <div class="cv-inline-list">
+              <span class="cv-meta">Bachelor of Arts</span>
+              <span class="cv-dot" aria-hidden="true"></span>
+              <span class="cv-meta">Communication Design</span>
+              <span class="cv-dot" aria-hidden="true"></span>
+              <span class="cv-meta">Grade: </span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="languages" class="cv-section">
+        <h2 class="cv-section-heading">Languages</h2>
+        <div class="cv-grid">
+          <article class="cv-card">
+            <h3 class="cv-card-title">English</h3>
+            <p class="cv-block-text">Proficient</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Russian</h3>
+            <p class="cv-block-text">Native</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="certificates" class="cv-section">
+        <h2 class="cv-section-heading">Certificates</h2>
+        <div class="cv-grid">
+          <article class="cv-card">
+            <div class="cv-card-header">
+              <h3 class="cv-card-title">Google UX Design Specialization</h3>
+              <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5M10.5 13.5 21 3m0 0h-5.25M21 3v5.25"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="cv-meta" style="margin-top: 0.25rem;"><time>Dec 2018</time></p>
+            <p class="cv-block-text">Coursera</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="cv-section cv-section--skills">
+        <h2 class="cv-section-heading">Skills</h2>
+        <div class="cv-grid">
+          <article class="cv-card">
+            <h3 class="cv-card-title">Design Systems & Strategy</h3>
+            <p class="cv-block-text">Scalable Design Systems, Product Ownership, Design Processes, Design Critique, Design System.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Cross-Functional Collaboration</h3>
+            <p class="cv-block-text">Cross-Team Facilitation, Stakeholder Management, Lean Communication, Project & Time Management.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Digital Product Design</h3>
+            <p class="cv-block-text">Figma, Prototyping, Webflow, Framer, UI/UX Design, Web Design.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Visual & Motion Design</h3>
+            <p class="cv-block-text">Adobe Creative Cloud (CC), Cinema 4D, Visual Communications, Motion Graphics, Branding.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Technical & Analytical Skills</h3>
+            <p class="cv-block-text">HTML/CSS, Google Analytics, MS Clarity, PostHog, AI/LLM Workflows, 3D Visualisation, Data Analysis.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Project Management Methodologies</h3>
+            <p class="cv-block-text">Kanban, Agile, Project Management.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card-title">Communication & Presentation</h3>
+            <p class="cv-block-text">Presentation, Documentation, Mentorship, Public Speaking.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="cv-nav" aria-label="Profile sections" data-cv-nav>
+      <div class="cv-nav-inner">
+        <button type="button" class="cv-nav-button is-active" data-cv-nav-to="home">Home</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="about">About</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="work">Work</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="education">Education</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="languages">Languages</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="certificates">Certificates</button>
+        <button type="button" class="cv-nav-button" data-cv-nav-to="skills">Skills</button>
+      </div>
+    </nav>
+
+    <script>
+      (function () {
+        var nav = document.querySelector("[data-cv-nav]");
+        if (!nav) return;
+
+        var buttons = nav.querySelectorAll("[data-cv-nav-to]");
+
+        function setActive(to) {
+          buttons.forEach(function (button) {
+            button.classList.toggle("is-active", button.getAttribute("data-cv-nav-to") === to);
+          });
+        }
+
+        function scrollToSection(to) {
+          var target = to === "home" ? document.documentElement : document.getElementById(to);
+          if (!target) return;
+
+          if (to === "home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          setActive(to);
+        }
+
+        function updateNavBottom() {
+          var doc = document.documentElement;
+          var distanceFromBottom = doc.scrollHeight - window.scrollY - window.innerHeight;
+          nav.classList.toggle("cv-nav--raised", distanceFromBottom <= 100);
+        }
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            scrollToSection(button.getAttribute("data-cv-nav-to"));
+          });
+        });
+
+        var lastRun = 0;
+
+        function onScroll() {
+          var now = Date.now();
+          if (now - lastRun < 100) return;
+          lastRun = now;
+
+          updateNavBottom();
+
+          var active = "home";
+          buttons.forEach(function (button) {
+            var to = button.getAttribute("data-cv-nav-to");
+            if (to === "home") return;
+
+            var section = document.getElementById(to);
+            if (!section) return;
+
+            var rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+              active = to;
+            }
+          });
+
+          setActive(active);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        updateNavBottom();
+        onScroll();
+      })();
+    </script>
+  </body>
+</html>
