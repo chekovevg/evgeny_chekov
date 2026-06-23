@@ -55,7 +55,9 @@
 
       .cv-profile {
         min-height: 100dvh;
-        padding: 4rem 0 14rem;
+        position: relative;
+        z-index: 1;
+        padding: 1.5rem 0 14rem;
       }
 
       .cv-section {
@@ -67,6 +69,7 @@
 
       .cv-section:first-child {
         margin-top: 0;
+        padding-top: 2.5rem;
       }
 
       .cv-section--work,
@@ -95,6 +98,13 @@
       .cv-location {
         font-size: 0.9375rem;
         font-style: normal;
+      }
+
+      .cv-contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
       }
 
       .cv-section-heading {
@@ -146,6 +156,10 @@
       .cv-card-header {
         align-items: flex-start;
         justify-content: space-between;
+      }
+
+      .cv-card-header--center {
+        align-items: center;
       }
 
       .cv-title-row {
@@ -266,7 +280,7 @@
         right: 0;
         bottom: 5.75rem;
         left: 0;
-        z-index: 10;
+        z-index: 1;
         display: flex;
         justify-content: center;
         width: 100vw;
@@ -391,6 +405,7 @@
         <h1 class="cv-title">Evgenii Chekov</h1>
         <p class="cv-subtitle">Product Designer</p>
         <address class="cv-location">Tbilisi, GE.</address>
+        <div class="cv-contact-actions" aria-hidden="true"></div>
       </section>
 
       <section id="about" class="cv-section">
@@ -567,7 +582,7 @@
         <h2 class="cv-section-heading">Education</h2>
         <div class="cv-stack">
           <article class="cv-card">
-            <div class="cv-card-header">
+            <div class="cv-card-header cv-card-header--center">
               <h3 class="cv-card-title">British Higher School of Art & Design</h3>
               <a href="https://" class="cv-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Open link">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" aria-hidden="true">
